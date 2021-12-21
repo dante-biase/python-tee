@@ -29,14 +29,15 @@ class Tee:
 
     def __call__(self, *args, sep: str = None, end: str = None) -> None:
         for f in self.files:
-            print(*args, sep=sep, end=end, file=f)
+            print(*args, sep=sep, end=end, file=f, flush=True)
         print(*args, sep=sep, end=end)
 
 
-def tee(files, mode: str = 'w', *args, sep: str = None, end: str = None) -> None:
+def tee(files: List[str], mode: str = 'w', *args, sep: str = None, end: str = None) -> None:
     for fname in files:
         with open(fname, mode) as f:
-            print(*args, sep=sep, end=end, file=f)
+            print(*args, sep=sep, end=end, file=f, flush=True)
     print(*args, sep=sep, end=end)
+
 
 __all__ = ["Tee", "tee"]
