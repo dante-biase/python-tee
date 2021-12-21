@@ -33,7 +33,10 @@ class Tee:
         print(*args, sep=sep, end=end)
 
 
-def tee(files: List[str], mode: str = 'w', *args, sep: str = None, end: str = None) -> None:
+def tee(files: List[str], mode: str, *args, sep: str = None, end: str = None) -> None:
+    if mode not in ['w', 'a']:
+            raise ValueError(f"Invalid mode '{mode}': select from ['w', 'a']")
+
     for fname in files:
         with open(fname, mode) as f:
             print(*args, sep=sep, end=end, file=f, flush=True)
