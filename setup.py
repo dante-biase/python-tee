@@ -2,12 +2,12 @@ from distutils.core import setup
 setup(
   name = 'python-tee',
   packages = ['tee'],
-  version = '0.0.3',
+  version = '0.0.4',
   license='MIT',
   description = '',
   author = 'Dante Biase',
   url = 'https://github.com/dante-biase/python-tee',
-  download_url = 'https://github.com/dante-biase/python-tee/archive/v0.0.3.tar.gz',
+  download_url = 'https://github.com/dante-biase/python-tee/archive/v0.0.4.tar.gz',
   classifiers=[
     'Development Status :: 5 - Production/Stable',
     'Intended Audience :: Developers',
