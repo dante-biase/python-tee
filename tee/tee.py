@@ -1,4 +1,4 @@
-from typing import List
+from typing import Optional, List, Any
 
 
 def __read_only_properties(*attrs):
@@ -27,13 +27,13 @@ class Tee:
         self.files = [open(f, mode) for f in files]
         self.mode = mode
 
-    def __call__(self, *args, sep: str = None, end: str = None) -> None:
+    def __call__(self, *args: Any, sep: Optional[str] = None, end: Optional[str] = None) -> None:
         for f in self.files:
             print(*args, sep=sep, end=end, file=f, flush=True)
         print(*args, sep=sep, end=end)
 
 
-def tee(files: List[str], mode: str, *args, sep: str = None, end: str = None) -> None:
+def tee(files: List[str], mode: str, *args: Any, sep: Optional[str] = None, end: Optional[str] = None) -> None:
     if mode not in ['w', 'a']:
             raise ValueError(f"Invalid mode '{mode}': select from ['w', 'a']")
 
