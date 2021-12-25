@@ -33,7 +33,7 @@ class Tee:
         print(*args, sep=sep, end=end)
 
 
-def tee(files: List[str], mode: str, *args: Any, sep: Optional[str] = None, end: Optional[str] = None) -> None:
+def tee(*args: Any, sep: Optional[str] = None, end: Optional[str] = None, files: List[str] = [], mode: str = 'w') -> None:
     if mode not in ['w', 'a']:
             raise ValueError(f"Invalid mode '{mode}': select from ['w', 'a']")
 
