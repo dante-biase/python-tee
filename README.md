@@ -10,7 +10,7 @@ python-tee is a simple tool that allows you to simultaneously print output to co
 
 # requirements
 
-- Python 3.6^
+- Python >= 3.6
 
 # install
 
