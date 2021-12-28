@@ -20,35 +20,35 @@ $ pip3 install python-tee
 
 # examples
 
-
+## OOP
 ```python
-# OOP
 from tee import Tee
 
 tee = Tee("output1.log", "output2.log", mode='w')
 
 tee("Hello", "World", sep=', ', end='!')
->>> Hello, World!
+# >>> Hello, World!
 tee()
->>>
+# >>> ''
 tee(1, 2, 3, ['a', 'b', 'c'])
->>> 1 2 3 ['a', 'b', 'c']
-
-''' output1.log, output2.log
-Hello, World!
-1  2  3 ['a', 'b', 'c']
-
-'''
+# >>> 1 2 3 ['a', 'b', 'c']
 
 ```
+```
+# output1.log, output2.log
+Hello, World!
+1  2  3 ['a', 'b', 'c']
+```
 
+## Functional
 ```python
-# Functional
 from tee import tee
 
 tee("Hello", "World", sep=", ", end="!", files=["output1.log", "output2.log"], mode='w')
+# >>> Hello, World!
 
-''' output1.log, output2.log
+```
+```
+# output1.log, output2.log
 Hello, World!
-'''
 ```
